@@ -21,30 +21,43 @@ def division(num1, num2):
 def pedirNum():
     while True:
         try:
-            num1 = int(input("\nIngrese el numero: "))
-            num2 = int(input("\nIngrese el siguiente numero: "))
+            num1 = int(input("Ingrese el numero: "))
+            num2 = int(input("Ingrese el siguiente numero: "))
             return num1,num2
             break
         except ValueError:
             print("Error: Porfavor ingrese un numero entero.")
 
-print("Elegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir: ")
-operation = input()
+
+#Solicita accion a realizar.
+def chooseOperation():
+    operation = ''
+    while True:
+            operation = str(input("\nElegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir: "))
+            operation = operation.upper()
+            if operation in ['S','R','M','D']:
+                break
+            else:
+                print("\nError: Porfavor ingrese una opcion valida.")
+    return operation
 
 
-if operation == 'S':#suma
-    print("--Suma--\n")
+#MAIN
+operation = chooseOperation()
+
+if operation  == 'S':#suma
+    print("\n--Suma--")
     num1, num2 = pedirNum()
     sumar(num1,num2)
 elif operation == 'R':#resta
-    print("--Resta--\n")
+    print("\n--Resta--")
     num1, num2 = pedirNum()
     restar(num1,num2)
 elif operation == 'M':#multiplicacion
-    print("--Multiplicacion--\n")
+    print("\n--Multiplicacion--")
     num1, num2 = pedirNum()
     multiplicar(num1,num2)
 elif operation == 'D':#division
-    print("--Division--\nIngrese el numero: ")
+    print("\n--Division--")
     num1, num2 = pedirNum()
     division(num1,num2)
