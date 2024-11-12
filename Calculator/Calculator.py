@@ -17,28 +17,34 @@ def multiplicar(num1, num2):
 def division(num1, num2):
     print("Resultado: ",num1 / num2)
 
+#Solicita datos al usuario
+def pedirNum():
+    while True:
+        try:
+            num1 = int(input("\nIngrese el numero: "))
+            num2 = int(input("\nIngrese el siguiente numero: "))
+            return num1,num2
+            break
+        except ValueError:
+            print("Error: Porfavor ingrese un numero entero.")
 
-print("Elegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[Dividir]: ")
+print("Elegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir: ")
 operation = input()
 
 
 if operation == 'S':#suma
-    num1 = int(input("--Suma--\nIngrese el numero: "))
-    num2 = int(input("Ingrese el siguiente numero: "))
-
+    print("--Suma--\n")
+    num1, num2 = pedirNum()
     sumar(num1,num2)
 elif operation == 'R':#resta
-    num1 = int(input("--Resta--\nIngrese el numero: "))
-    num2 = int(input("Ingrese el siguiente numero: "))
-
+    print("--Resta--\n")
+    num1, num2 = pedirNum()
     restar(num1,num2)
 elif operation == 'M':#multiplicacion
-    num1 = int(input("--Multiplicar--\nIngrese el numero: "))
-    num2 = int(input("Ingrese el siguiente numero: "))
-
+    print("--Multiplicacion--\n")
+    num1, num2 = pedirNum()
     multiplicar(num1,num2)
 elif operation == 'D':#division
-    num1 = int(input("--Division--\nIngrese el numero: "))
-    num2 = int(input("Ingrese el siguiente numero: "))
-
+    print("--Division--\nIngrese el numero: ")
+    num1, num2 = pedirNum()
     division(num1,num2)
