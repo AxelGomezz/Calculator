@@ -33,7 +33,7 @@ def pedirNum():
 def chooseOperation():
     operation = ''
     while True:
-            operation = str(input("\nElegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir: "))
+            operation = input("\nElegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir: ")
             operation = operation.upper()
             if operation in ['S','R','M','D']:
                 break
