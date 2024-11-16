@@ -2,20 +2,25 @@
 num1 = 0
 num2 = 0
 operation = ''
+resultado = 0
 
 #Funciones suma y resta
 def sumar(num1,num2):
-    print("Resultado : ",num1 + num2)
+    return num1 + num2
 
 def restar(num1,num2):
-    print("Resultado: ",num1 - num2)
+    return num1 - num2
 
 #Funciones multiplicacion y division
 def multiplicar(num1, num2):
-    print("Resultado: ",num1 * num2)
+    return num1 * num2
 
 def division(num1, num2):
-    print("Resultado: ",num1 / num2)
+    while 0 in (num1,num2):
+        print("\nNo se puede dividir por cero! Porfavor ingrese otro numero")
+        num1,num2 = pedirNum()
+    return num1 / num2
+
 
 #Solicita datos al usuario
 def pedirNum():
@@ -48,16 +53,23 @@ operation = chooseOperation()
 if operation  == 'S':#suma
     print("\n--Suma--")
     num1, num2 = pedirNum()
-    sumar(num1,num2)
+    resultado = sumar(num1,num2)
+    print("El resultado es:",resultado)
+
 elif operation == 'R':#resta
     print("\n--Resta--")
     num1, num2 = pedirNum()
-    restar(num1,num2)
+    resultado = restar(num1,num2)
+    print("El resultado es:",resultado)
+
 elif operation == 'M':#multiplicacion
     print("\n--Multiplicacion--")
     num1, num2 = pedirNum()
-    multiplicar(num1,num2)
+    resultado = multiplicar(num1,num2)
+    print("El resultado es:",resultado)
+
 elif operation == 'D':#division
     print("\n--Division--")
     num1, num2 = pedirNum()
-    division(num1,num2)
+    resultado = division(num1,num2)
+    print("El resultado es:",resultado)
