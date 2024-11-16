@@ -38,9 +38,9 @@ def pedirNum():
 def chooseOperation():
     operation = ''
     while True:
-            operation = input("\nElegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir: ")
+            operation = input("\nElegir operacion:\n[S]umar\n[R]estar\n[M]ultiplicar\n[D]ividir\n[B]ack para salir: ")
             operation = operation.upper()
-            if operation in ['S','R','M','D']:
+            if operation in ['S','R','M','D','B']:
                 break
             else:
                 print("\nError: Porfavor ingrese una opcion valida.")
@@ -48,28 +48,28 @@ def chooseOperation():
 
 
 #MAIN
-operation = chooseOperation()
+while operation != 'B':
+    operation = chooseOperation()
+    if operation  == 'S':#suma
+        print("\n--Suma--")
+        num1, num2 = pedirNum()
+        resultado = sumar(num1,num2)
+        print("El resultado es:",resultado)
 
-if operation  == 'S':#suma
-    print("\n--Suma--")
-    num1, num2 = pedirNum()
-    resultado = sumar(num1,num2)
-    print("El resultado es:",resultado)
+    elif operation == 'R':#resta
+        print("\n--Resta--")
+        num1, num2 = pedirNum()
+        resultado = restar(num1,num2)
+        print("El resultado es:",resultado)
 
-elif operation == 'R':#resta
-    print("\n--Resta--")
-    num1, num2 = pedirNum()
-    resultado = restar(num1,num2)
-    print("El resultado es:",resultado)
+    elif operation == 'M':#multiplicacion
+        print("\n--Multiplicacion--")
+        num1, num2 = pedirNum()
+        resultado = multiplicar(num1,num2)
+        print("El resultado es:",resultado)
 
-elif operation == 'M':#multiplicacion
-    print("\n--Multiplicacion--")
-    num1, num2 = pedirNum()
-    resultado = multiplicar(num1,num2)
-    print("El resultado es:",resultado)
-
-elif operation == 'D':#division
-    print("\n--Division--")
-    num1, num2 = pedirNum()
-    resultado = division(num1,num2)
-    print("El resultado es:",resultado)
+    elif operation == 'D':#division
+        print("\n--Division--")
+        num1, num2 = pedirNum()
+        resultado = division(num1,num2)
+        print("El resultado es:",resultado)
